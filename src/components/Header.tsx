@@ -1,7 +1,7 @@
 import { useState, } from "react"
 import { Link } from "react-router-dom"
 
-const ProfileDropDown = (props) => {
+const ProfileDropDown = ({classTw}) => {
 
   const [state, setState] = useState(false)
 
@@ -14,13 +14,13 @@ const ProfileDropDown = (props) => {
 
 
   return (
-    <div className={`relative ${props.class}`}>
+    <div className={`relative ${classTw}`}>
       <div className="flex items-center space-x-4">
         <button className="w-10 h-10 outline-none rounded-full ring-offset-2 ring-gray-200 ring-2 lg:focus:ring-indigo-600"
           onClick={() => setState(!state)}
         >
           <img
-            src="https://randomuser.me/api/portraits/men/46.jpg"
+            src="./hospital.svg"
             className="w-full h-full rounded-full"
           />
         </button>
@@ -30,11 +30,11 @@ const ProfileDropDown = (props) => {
         </div>
       </div>
       <ul 
-      className={`bg-white top-12 right-0 mt-5 space-y-5 lg:absolute lg:border lg:rounded-md lg:text-sm lg:w-52 lg:shadow-md lg:space-y-0 lg:mt-0 ${state ? '' : 'lg:hidden'}`}>
+      className={`bg-white top-12 right-0 mt-5 space-y-5  lg:absolute lg:border lg:rounded-md lg:text-sm lg:w-52 lg:shadow-md lg:space-y-0 lg:mt-0 ${state ? '' : 'lg:hidden'}`}>
         {
           navigation.map((item, idx) => (
             <li>
-              <Link key={idx} className="block text-gray-600 lg:hover:bg-gray-50 lg:p-2.5" to={item.path}>
+              <Link key={idx} className="block text-gray-600 bg-white lg:hover:bg-gray-50 lg:p-2.5" to={item.path}>
                 {item.title}
               </Link>
             </li>
@@ -82,13 +82,13 @@ const Header = () => {
               }
             </ul>
             <ProfileDropDown
-              class="mt-5 pt-5 border-t lg:hidden"
+              classTw="mt-5 pt-5 border-t lg:hidden"
             />
           </div>
           <div className="flex-1 flex items-center justify-end space-x-2 sm:space-x-6">
 
             <ProfileDropDown
-              class="hidden lg:block"
+              classTw="hidden lg:block"
             />
             <button
               className="outline-none text-gray-400 block lg:hidden"

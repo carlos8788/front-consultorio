@@ -1,5 +1,6 @@
 import Whatsapp from "../components/icons/Whatsapp"
 
+
 const Home = () => {
   return (
     <section className="h-[510px] text-dark w-full  flex flex-col items-center justify-center gap-4 custom-gradient">
@@ -7,6 +8,7 @@ const Home = () => {
 
       <img src="portada.png" alt="portada" className="w-80 h-80 rounded-full object-cover shadow-2xl" />
       <Whatsapp/>
+
     </section>
   )
 }
